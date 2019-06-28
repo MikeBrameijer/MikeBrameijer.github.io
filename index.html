@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="HikingApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> LASHer </title>
+    <link rel="stylesheet" href="styles.css">
+    <link type="text/css" href="https://fonts.googleapis.com/css?family=Material+Icons" 
+rel="stylesheet"/> 
+
+<link type="text/css" 
+href="https://fonts.googleapis.com/icon?family=Material+Icons&style=outlined" 
+rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      <link rel="stylesheet" href="https://storage.googleapis.com/non-spec-apps/mio-icons/latest/outline.css"> -->
+</head>
+
+<body>
+  <!-- <div ng-if="$rootscope.displayBuddy"style="position:fixed;height:100%;width:100%;z-index:9;background:black;opacity:.75;"></div> -->
+
+
+
+        <!-- <h1 class="appName">LASHer Trail Finder</h1> -->
+
+<nav role="navigation">
+        <div id="menuToggle">
+      
+          <input class="routingInput" type="checkbox" />
+         
+          <span></span>
+          <span></span>
+          <span></span>
+          
+    
+            <ul id="menu">
+            <a class="aTag" href="#!/hiking-list"><li>Home</li></a>
+            <a class="aTag" href="#!/saved"><li>Favorites</li></a>
+           
+          </ul>
+        </div>
+        <div class="text">
+            <img class="mountainImage" src="mountainscalling.png">
+            <div class="heading">
+            <h1 class="lasher">LASHer</h1>
+            <h4 class="trailFinder">Trail Finder</h4>
+            </div>
+
+            <div class="fadingEffect"></div>
+         </div>
+         
+      </nav>
+      
+    <main ng-view>
+     
+        <!-- <hiking-list></hiking-list> -->
+        <!-- <difficulty-calculator></difficulty-calculator> -->
+
+        <!-- <button class="buddyIconFront"><img class="buddyIconFront" src="assets/buddyIcon.png"></button> -->
+
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script src="https://code.angularjs.org/1.7.8/angular.js"></script>
+    <script src="https://code.angularjs.org/1.7.8/angular-route.js"></script>
+    <script src="app.module.js"></script>
+    <script src="components/hiking.service.js"></script>
+    <script src="components/details/details.js"></script>
+    <script src="components/hiking-list/hikingList.js"></script>
+    <script src="components/difficulty-calc/difficultyCalc.js"></script>
+    <script src="components/about/about.js"></script>
+    <script src="components/results/results.js"></script>
+    <script src="components/saved/saved.js"></script>
+    <script src="components/search/search.js"></script>
+    <script src="components/hiking-assistant/hikingAssistant.js"></script>
+    <script src="components/expand-directive/expandDirective.js"></script>
+    <script src="app.config.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+</body>
+
+
+</html>

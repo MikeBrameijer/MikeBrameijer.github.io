@@ -1,0 +1,692 @@
+@import url('https://fonts.googleapis.com/css?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Anton|Open+Sans+Condensed:300&display=swap');
+ 
+button {
+    background: none;
+    border: none;
+}
+
+ body {
+   font-family: 'Open Sans Condensed', sans-serif;
+   margin: 0;
+   padding: 0;
+   background: #51544d;
+   background: url('assets/rock-bg.jpg');
+   background-attachment: fixed;
+   background-repeat: no-repeat;
+   background-size: cover;
+   position: absolute;
+   width:100%;
+   height:100%;
+
+ }
+
+ .imageCard {
+    width: 75vw;
+    height: 350px;
+}
+
+ .cardContainer {
+   color: white;
+ }
+
+
+ .aTag {
+   text-decoration: none;
+   color: #363D4F;
+   transition: color 0.3s ease;
+ }
+
+ .buddyIconFront{
+    width: 50px;
+    height: 50px;
+    outline: none;
+ }
+ .buddyIconRepeat{
+    width: 25px;
+    height: 25px;
+    outline: none;
+ }
+ .format-location{
+   color: white;
+   width: 40%;
+   height: 90%;
+   margin: 0;
+   font-size: 14px;
+     font-weight: bold;
+ }
+
+.sort-trail {
+  border-radius: 5px;
+  display: flex;
+  border: none;
+   width: 40%;
+  padding: 5px 5px 5px 5px;
+  height: 5vh;
+  
+}
+
+.location-and-sort{
+  display: flex;
+  margin: 0 auto;
+  margin-bottom: 3%;
+  flex-direction: row;
+  width: 90vw;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  height: 7vh;
+  align-items: flex-end;
+ 
+}
+
+ .buddy-popup {
+     
+     display: flex;
+     position: relative;
+     justify-content: space-evenly;
+     background-color: white;
+     opacity: .9;
+     box-shadow: 0px 0px 0px 0px;
+     margin: 12px;
+     padding: 12px;
+     position: fixed;
+     z-index: 12;
+     top: 5vh;
+     left: calc(80% - 76vw);
+     width: 80vw;
+     overflow-y:scroll;
+    }
+
+    .close-button {
+        position: absolute;
+        top:5px;
+        left:5px;
+    }
+
+    .hiking-buddy-left {
+        display: flex;
+        flex-direction: column;
+    }
+
+ #menuToggle {
+   display: block;
+   position: relative;
+   top: 20px;
+   left: 20px;
+   z-index: 1;
+   -webkit-user-select: none;
+   user-select: none;
+   width: 90vw;
+ }
+ 
+ #menuToggle .routingInput {
+   display: block;
+   width: 40px;
+   height: 32px;
+   position: absolute;
+   top: -7px;
+   left: -5px;
+   cursor: pointer;
+   opacity: 0; 
+   z-index: 2; 
+   -webkit-touch-callout: none;
+ }
+ 
+
+ #menuToggle span {
+   display: block;
+   width: 33px;
+   height: 4px;
+   margin-bottom: 5px;
+   position: relative;
+   background: #F8F9F4;
+   border-radius: 3px;
+   z-index: 1;
+   transform-origin: 4px 0px;
+   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               opacity 0.55s ease;
+ }
+ 
+ #menuToggle span:first-child {
+   transform-origin: 0% 0%;
+ }
+ 
+ #menuToggle span:nth-last-child(2) {
+   transform-origin: 0% 100%;
+ }
+ 
+
+ #menuToggle .routingInput:checked ~ span {
+   opacity: 1;
+   transform: rotate(45deg) translate(-2px, -1px);
+   background: #363D4F;
+ }
+ 
+
+ #menuToggle .routingInput:checked ~ span:nth-last-child(3) {
+   opacity: 0;
+   transform: rotate(0deg) scale(0.2, 0.2);
+ }
+ 
+
+ #menuToggle .routingInput:checked ~ span:nth-last-child(2) {
+   transform: rotate(-45deg) translate(0, -1px);
+ }
+ 
+
+ #menu {
+   position: absolute;
+   width: 150px;
+   margin: -100px 0 0 -50px;
+   padding: 50px;
+   padding-top: 125px;
+   background: #F8F9F4;
+   list-style-type: none;
+   -webkit-font-smoothing: antialiased;
+    transform-origin: 0% 0%;
+   transform: translate(-100%, 0);
+   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+ }
+ 
+ #menu li {
+   padding: 10px 0;
+   font-size: 22px;
+ }
+ 
+ /*
+  * And let's slide it in from the left
+  */
+ #menuToggle .routingInput:checked ~ ul {
+   transform: none;
+ }
+
+ .buddyIconFront, .buddyIconRepeat {
+  display: flex;
+  border: none;
+  text-align: center;
+  background-color: white;
+  opacity: .9;
+  font-size: 12px;
+  justify-content: center;
+  align-items: center;
+  margin: 25px auto;
+  border-radius: 5px;
+ }
+
+.searchButton {
+   border: none;
+   padding:10px 25px 10px 25px;
+   text-align: center;
+   background-color: white;
+     font-size: 12px;
+   border-radius: 5px;
+ }
+
+ .searchInput {
+  background-color: white;
+  padding:10px 25px 10px 25px;
+   border: none;
+   background-color: white;
+   font-size: 12px;
+   border-radius: 5px;
+   display: flex;
+   color: #363D4F;
+ }
+
+
+
+ .location-search {
+  margin-bottom: 3%;
+}
+
+ .selectStars {
+   margin: 0;
+   margin-bottom: 3%;
+   width: 100%;
+ }
+
+ .distanceSearch {
+  display: flex;
+  height: 33px;
+  justify-content: space-between;
+  margin-bottom: 3%;
+ }
+
+ .dOne, .dTwo {
+   margin: 0;
+   width: 28%;
+ }
+
+ 
+ .buddyInputLbs {
+  margin: 0;
+  width: 45px;
+  text-align: center;
+  background-color: white;
+  opacity: .9;
+  font-size: 12px;
+  border-radius: 5px;
+}
+.buddyInputExp {
+  margin: 0;
+  width: fit-content;
+  text-align: center;
+  background-color: white;
+  opacity: .9;
+  font-size: 12px;
+  border-radius: 5px;
+}
+
+ .searchButton {
+   color: #363D4F;
+   outline: none;
+   width: 100%;
+  
+ }
+
+ .heading {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 30%;
+   margin: 0 auto;
+   flex-wrap: wrap;
+ }
+
+ .lasher {
+    color: white;
+   margin-top: -20px;
+   margin-bottom: 0px;
+   font-family: 'Anton', sans-serif;
+   font-weight: 100;
+   font-size: 40px;
+ }
+
+ .trailFinder {
+     color: white;
+   margin-top: -15px;
+   font-family: 'Open Sans Condensed', sans-serif;
+   font-weight: 100;
+   font-size: 20px;
+ }
+
+ .mountainImage {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   max-width: 40%;
+   height: auto;
+   margin: 0 auto;
+   margin-top: -20px;
+ }
+
+
+.mainContainer {
+    width: 90vw;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    height: 300px;
+    width: 300px;
+    margin-bottom: 10px;
+      color:black;
+}
+
+i {
+  display: flex;
+  margin: 10px;
+  align-content: flex-start;
+}
+
+i:hover {
+  cursor: pointer;
+}
+
+
+.aboutBottle {
+  width: 50px;
+  height: auto;
+}
+
+.aboutFire {
+  width: 50px;
+  height: auto;
+}
+
+.trail-card {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 300px;
+    width: 90vw;
+    position: relative;
+    width: inherit;
+    margin: 0 auto;
+    background-color: white;
+
+}
+
+.trail-card-info {
+    display: flex;
+    height: 50px;
+    justify-content: space-around;
+    background-color: white;
+    align-items: center;
+    font-weight: bolder;
+    opacity: .9;
+}
+
+.trail-details-button {
+    display: flex;
+    justify-content: center;
+}
+
+.more-less-button {
+    width:30px;
+    height:30px;
+    background: black;
+    opacity: .8;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.trail-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 75px;
+
+}
+
+.hiking-buddy-icon {
+    height: 30px;
+    width: 30px;
+    background: black;
+    opacity: .8;
+    border-radius: 5px;
+    padding: 5px;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.left {
+    display: flex;
+    height: 120px;
+    flex-direction: column;
+    align-content: space-between;
+}
+
+.right {
+    display: flex;
+    height: 120px;
+    flex-direction: column;
+    align-content: space-between;
+}
+
+.subContainer {
+    border: 2px solid black;
+}
+
+.starRating {
+    display: flex;
+    width: auto;
+    align-items: flex-end;
+}
+
+.star {
+    height:30px;
+    width: 18px;
+}
+
+.fullView {
+    height: auto;
+}
+
+.fullview-trail-card {
+    height:300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.show {
+    position: relative;
+    z-index: 10;
+    visibility: visible;
+    background: white;
+    opacity: .9;
+    display: flex;
+    flex-direction: column;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+.trail-details {
+    border-bottom: solid 1px #e0dcdc;
+    padding: 12px;
+}
+
+.search-container{
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    margin: 0 auto;
+    margin-top: 5%;
+}
+
+.seach-components {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.extra-search-params {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 7px;
+}
+
+.hiking-buddy-list {
+    list-style-type: none;
+}
+
+.hiking-buddy-list > li {
+    display:flex;
+    justify-content: space-between;
+}
+
+.buddy-description-icons {
+    width: 35px;
+    height: 35px;
+}
+
+.bounce:hover {
+    animation-name: bounce;
+    animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+}
+
+@keyframes bounce {
+    0%   { transform: scale(1,1)      translateY(0); }
+    10%  { transform: scale(1.1,.9)   translateY(0); }
+    30%  { transform: scale(.9,1.1)   translateY(-10px); }
+    50%  { transform: scale(1.05,.95) translateY(0); }
+    57%  { transform: scale(1,1)      translateY(-7px); }
+    64%  { transform: scale(1,1)      translateY(0); }
+    100% { transform: scale(1,1)      translateY(0); }
+}
+
+
+@media only screen and (min-width: 768px) {
+
+        .mainContainer {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .container {
+            display:flex;
+            width:inherit;
+            margin: 5px;
+        }
+
+        .trailFinder {
+          margin-bottom: -14px;
+        }
+
+        .search-container {
+            width: 90vw;
+            margin-top: 10%;
+        }
+
+        .distanceAndStar {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+        }
+    
+        .distanceSearch {
+          margin-bottom: 0;
+        }
+    
+        .dOne, .dTwo {
+          height: 21px;
+        }
+    
+        
+        .buddy-popup {
+            left: calc(85.5% - 79vw);
+        }
+
+        .searchInput, .searchButton {
+          padding: 15px 30px 15px 30px;
+          font-size: 18px;
+        }
+
+        .distances {
+         width: 35%;
+        }
+
+        .selectStars {
+          width: 35%;
+          margin-left: 2.5%;
+          height: 50px;
+         }
+
+        .format-location {
+          font-size: 28px;
+        }
+
+        .sort-trail {
+          font-size: 18px;
+        }
+
+        .location-and-sort {
+          margin-bottom: 1%;
+        }
+
+        .fullView {
+            display:flex;
+            width:inherit;
+        }
+        
+        .trail-card {
+            flex-basis: 50%;
+        }
+
+        .hide {
+            position: relative;
+            z-index: 10;
+            visibility: visible;
+            background: white;
+            opacity: .9;
+            display: flex;
+            flex-basis: 75%;
+            justify-content: start;
+        }
+
+        .hide-me {
+            display: none;
+        }
+
+        .imageCard {
+            width: 60vw;
+            margin-bottom: 25px;
+            height: auto;
+        }
+}
+
+
+@media only screen and (min-width: 1200px) {
+
+    .search-container {
+      width: 60vw;
+    }
+
+    .text {
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+    }
+    .heading {
+      display: flex;
+      margin: 0px;
+      align-items: baseline;
+      width: 40%;
+    }
+
+    .mountainImage {
+      margin: 0px;
+    }
+
+    .lasher {
+      display: flex;
+      font-size: 100px;
+      margin-left: 10px;
+    }
+
+    .trailFinder {
+      display: flex;
+      font-size: 45px;
+    }
+
+    .buddy-popup {
+        left: calc(87.4% - 80vw);
+         }
+
+    .location-and-sort {
+      margin-block: 10%;
+    }
+
+    .format-location {
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .distanceAndStar {
+      justify-content: space-between;
+    }
+
+    .distanceSearch {
+      margin-bottom: 0;
+    }
+
+    .dOne, .dTwo {
+      height: 21px;
+    }
+
+    .searchButton:hover {
+      background-color: lightgray;
+    }
+
+    
+
+
+}
